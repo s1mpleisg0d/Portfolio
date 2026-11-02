@@ -143,63 +143,6 @@
     font-size:clamp(1.7rem,3.4vw,2.3rem);margin:0}
   .sec-sub{color:var(--muted);max-width:62ch;margin:0 0 28px;font-size:1.01rem}
 
-  /* ---------- journey flow ---------- */
-  .flow-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 18px}
-  .flow-hint{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
-  .flow-ctrl{display:flex;gap:6px}
-  .flow-ctrl button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-strong);
-    background:var(--surface);color:var(--ink);cursor:pointer;font-size:1.05rem;font-family:var(--display);
-    transition:border-color .2s,background .2s}
-  .flow-ctrl button:hover{border-color:var(--cobalt);color:var(--cobalt)}
-  .flow{position:relative;height:570px;border:1px solid var(--line);border-radius:20px;
-    background:var(--surface);overflow:hidden;touch-action:none}
-  .flow-stage{position:absolute;top:0;left:0;width:1340px;height:600px;transform-origin:0 0;cursor:grab;
-    background-image:radial-gradient(var(--grid) 1.4px,transparent 1.4px);background-size:28px 28px}
-  .flow-stage.grabbing{cursor:grabbing}
-  .flow-svg{position:absolute;top:0;left:0;width:1340px;height:600px;overflow:visible;pointer-events:none}
-  .edge{fill:none;stroke:var(--line-strong);stroke-width:2.4;stroke-linecap:round}
-  .edge.flow-dash{stroke:var(--cobalt);stroke-width:2.4;opacity:.55;
-    stroke-dasharray:3 11;animation:dashmove 1.1s linear infinite}
-  .edge.branch{stroke:var(--coral);opacity:.5}
-  @keyframes dashmove{to{stroke-dashoffset:-28}}
-  .comet{fill:var(--cobalt)}
-  .node{position:absolute;transform:translate(-50%,-50%);width:186px;cursor:grab;
-    background:var(--surface);border:1px solid var(--line-strong);border-radius:14px;padding:13px 15px;
-    box-shadow:0 10px 26px rgba(8,10,16,.10);transition:box-shadow .2s,border-color .2s,transform .08s;
-    user-select:none;touch-action:none}
-  .node:hover{border-color:var(--cobalt);box-shadow:0 16px 36px rgba(36,56,255,.18)}
-  .node.dragging{box-shadow:0 20px 44px rgba(8,10,16,.24);z-index:6}
-  .node .n-top{display:flex;align-items:center;gap:9px;margin:0 0 7px}
-  .node .n-ic{width:30px;height:30px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;
-    background:var(--cobalt-soft);color:var(--cobalt)}
-  .node .n-ic svg{width:16px;height:16px}
-  .node .n-yr{font-family:var(--mono);font-size:.7rem;color:var(--muted)}
-  .node h4{font-family:var(--display);font-size:1rem;font-weight:600;margin:0;line-height:1.2;letter-spacing:-.01em}
-  .node p{margin:5px 0 0;font-size:.82rem;color:var(--muted);line-height:1.4}
-  .node.artifact{border-color:var(--coral)}
-  .node.artifact .n-ic{background:color-mix(in srgb,var(--coral) 16%,transparent);color:var(--coral)}
-  .node.artifact:hover{box-shadow:0 16px 36px rgba(255,86,48,.2)}
-  .node .n-open{margin-top:9px;font-family:var(--mono);font-size:.72rem;color:var(--coral);display:flex;align-items:center;gap:6px}
-  .flow-legend{display:flex;gap:18px;flex-wrap:wrap;margin:16px 2px 0;font-size:.82rem;color:var(--muted)}
-  .flow-legend span{display:flex;align-items:center;gap:7px}
-  .lg-dot{width:10px;height:10px;border-radius:3px}
-
-  /* node detail popover */
-  .pop-overlay{position:fixed;inset:0;z-index:80;background:rgba(6,9,16,.55);
-    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:24px}
-  .pop-overlay.open{display:flex}
-  .pop{background:var(--surface);border:1px solid var(--line);border-radius:18px;max-width:440px;width:100%;
-    padding:28px;box-shadow:0 30px 70px rgba(6,9,16,.4);position:relative}
-  .pop .pop-ic{width:44px;height:44px;border-radius:12px;background:var(--cobalt-soft);color:var(--cobalt);
-    display:flex;align-items:center;justify-content:center;margin:0 0 16px}
-  .pop .pop-ic svg{width:22px;height:22px}
-  .pop .pop-yr{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin:0 0 6px}
-  .pop h3{font-family:var(--display);font-size:1.4rem;font-weight:600;margin:0 0 12px;letter-spacing:-.01em}
-  .pop p{color:var(--ink-soft);margin:0;font-size:1rem}
-  .pop-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:9px;border:1px solid var(--line);
-    background:transparent;color:var(--muted);cursor:pointer;font-size:1.1rem}
-  .pop-close:hover{color:var(--ink);border-color:var(--line-strong)}
-
   /* about */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:46px}
   .about-body p{margin:0 0 18px;color:var(--ink-soft)}
@@ -218,6 +161,13 @@
   .vp-statement{font-family:var(--display);font-weight:500;font-size:clamp(1.4rem,3.2vw,2rem);
     line-height:1.3;letter-spacing:-.01em;max-width:24ch;margin:14px 0 0;position:relative}
   .vp-sub{color:#aab1c2;max-width:52ch;margin:20px 0 0;position:relative}
+  .vp-proof{position:relative;margin:28px 0 0;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);box-shadow:none}
+  .vp-proof:before{display:none}
+  .glance{display:flex;flex-direction:column;margin:4px 0 0}
+  .g-row{display:flex;gap:16px;padding:11px 0;border-bottom:1px solid var(--panel-line)}
+  .g-row:last-child{border-bottom:none}
+  .g-k{font-family:var(--mono);font-size:.74rem;color:#8b93a7;width:52px;flex:none;padding-top:2px}
+  .g-v{font-size:.92rem;color:#e8ecf3;line-height:1.4}
 
   .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   .skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
@@ -280,6 +230,8 @@
   .evidence-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
   .ev{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-strong);border-radius:11px;padding:12px 18px;font-weight:600;font-size:.95rem;transition:all .2s}
   .ev:hover{border-color:var(--cobalt);color:var(--cobalt);transform:translateY(-2px)}
+  .pdf-embed{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);margin:0 0 16px}
+  .pdf-embed iframe{display:block;width:100%;height:clamp(380px,68vh,600px);border:0}
   .ev small{font-family:var(--mono);font-weight:400;font-size:.74rem;color:var(--muted)}
   .refs{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
   .refs li{color:var(--muted);font-size:.92rem;border-left:2px solid var(--line);padding-left:14px;line-height:1.5}
@@ -322,7 +274,6 @@
     <a href="#top" class="brand" data-home><span class="dot"></span>Zeelkumar Narola</a>
     <div class="nav-right">
       <div class="nav-links" id="navLinks">
-        <a href="#journey" data-home>Journey</a>
         <a href="#about" data-home>About</a>
         <a href="#artifacts" data-home>Artifacts</a>
         <a href="#contact" class="nav-cta" data-home>Contact</a>
@@ -345,66 +296,42 @@
           <p class="eyebrow">professional portfolio <b>/ AIML-500 machine learning fundamentals</b></p>
           <h1 class="name">Zeelkumar<br>Narola</h1>
           <p class="role">Software developer building practical AI and machine learning.</p>
-          <p class="lead">I turn real constraints into working systems. Almost three years of full stack .NET engineering, now paired with applied machine learning and a habit of automating the slow, repetitive work out of a team's day.</p>
+          <p class="lead">A full stack .NET engineer with close to three years across the software lifecycle, now bringing machine learning into the systems I design, build, and ship.</p>
           <div class="hero-cta">
-            <a href="#journey" class="btn btn-primary" data-home>Explore the journey</a>
+            <a href="#artifacts" class="btn btn-primary" data-home>View artifacts</a>
             <a href="#contact" class="btn btn-ghost" data-home>Get in touch</a>
           </div>
         </div>
         <div class="reveal">
-          <div class="panel" id="heroPanel">
-            <p class="panel-k">// signature result, State of Ohio</p>
-            <p class="metric-label">Form delivery time, before and after I built AI assisted code generation</p>
-            <div class="bars">
-              <div class="bar-row bar-before"><span class="bar-tag">before</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-val">~3 days</span></div>
-              <div class="bar-row bar-after"><span class="bar-tag">after</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-val">&lt;1 day</span></div>
+          <div class="panel glance-panel">
+            <p class="panel-k">// at a glance</p>
+            <div class="glance">
+              <div class="g-row"><span class="g-k">role</span><span class="g-v">Software Application Developer</span></div>
+              <div class="g-row"><span class="g-k">based</span><span class="g-v">Fairborn, Ohio</span></div>
+              <div class="g-row"><span class="g-k">stack</span><span class="g-v">.NET, C#, SQL Server, Angular, React</span></div>
+              <div class="g-row"><span class="g-k">now</span><span class="g-v">Applied machine learning, AIML-500</span></div>
+              <div class="g-row"><span class="g-k">degree</span><span class="g-v">MS Computer Science, Wright State</span></div>
             </div>
-            <p class="panel-note">Generated the database, API, and interface layers from the specification, then reused validated templates. Timeline compressed by more than <b>two years</b>.</p>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- JOURNEY FLOW -->
-  <section class="block" id="journey">
-    <div class="wrap">
-      <div class="sec-head"><span class="sec-kick">01</span><h2 class="sec-title">The journey</h2></div>
-      <p class="sec-sub">From engineering fundamentals to applied AI, mapped as a flow. Drag any node, pan the canvas, and open a milestone. The two coral nodes are my portfolio artifacts, each opening its full page.</p>
-      <div class="flow-top">
-        <span class="flow-hint">drag nodes · drag canvas to pan · click to open</span>
-        <div class="flow-ctrl">
-          <button id="zoomOut" aria-label="Zoom out">&minus;</button>
-          <button id="zoomIn" aria-label="Zoom in">+</button>
-          <button id="zoomReset" aria-label="Reset view" style="width:auto;padding:0 14px;font-size:.82rem;font-family:var(--mono)">reset</button>
-        </div>
-      </div>
-      <div class="flow" id="flow">
-        <div class="flow-stage" id="stage">
-          <svg class="flow-svg" id="edges"></svg>
-        </div>
-      </div>
-      <div class="flow-legend">
-        <span><i class="lg-dot" style="background:var(--cobalt)"></i>Education and roles</span>
-        <span><i class="lg-dot" style="background:var(--coral)"></i>Portfolio artifact</span>
-      </div>
-    </div>
-  </section>
-
   <section class="block" id="about">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-kick">02</span><h2 class="sec-title">About</h2></div>
+      <div class="sec-head"><span class="sec-kick">01</span><h2 class="sec-title">About</h2></div>
       <div class="about-grid">
         <div class="about-body">
-          <p>I am a software application developer with close to three years of experience across the full software lifecycle on the Microsoft .NET platform. I work in C#, SQL Server, and modern JavaScript frameworks, and most of my recent work has centered on teaching software to generate itself.</p>
-          <p>At the State of Ohio I built AI assisted generation of database scripts, API endpoints, and interface components directly from requirement specifications. That work removed repetitive hand coding across the stack and cut form delivery from about three days to one day or less. I also built Playwright end to end automation that replaced manual regression cycles on a project once estimated at more than two years.</p>
-          <p>I hold a Master of Science in Computer Science from Wright State University, and I am now studying machine learning fundamentals at Indiana Wesleyan University. I bring the same bias toward working, honest solutions into everything I build with AI.</p>
+          <p>I am ZeelKumar Narola, a software developer who began with an information technology degree in India, earned a Master of Science in Computer Science at Wright State University, and has spent close to three years building production software for teams across the United States and abroad.</p>
+          <p>Most of my work lives on the Microsoft .NET platform, in C#, SQL Server, and modern JavaScript frameworks. I have delivered web, enterprise, and distributed applications across the full lifecycle, from analysis and design through testing and deployment, including single page front ends in Angular and React and scalable Web APIs backed by well designed databases.</p>
+          <p>What pulls me now is applying machine learning with the same engineering discipline. Through AIML-500 I have been pairing model judgment with the habits that keep software dependable, because the work I care about is building tools a team can trust rather than demonstrations that look good once and break in the real world.</p>
         </div>
         <div class="facts">
-          <div class="fact"><div class="n"><span>~3</span> yrs</div><div class="l">Full stack .NET engineering</div></div>
-          <div class="fact"><div class="n">3 to <span>&lt;1</span></div><div class="l">Days to deliver a form, after automation</div></div>
+          <div class="fact"><div class="n"><span>~3</span> yrs</div><div class="l">Full stack software engineering</div></div>
           <div class="fact"><div class="n">MS <span>CS</span></div><div class="l">Wright State University, 2023</div></div>
-          <div class="fact"><div class="n">AI <span>+ ML</span></div><div class="l">Applied focus at Indiana Wesleyan</div></div>
+          <div class="fact"><div class="n">AI <span>+ ML</span></div><div class="l">Applied focus, AIML-500</div></div>
+          <div class="fact"><div class="n"><span>OH</span></div><div class="l">Based in Fairborn, Ohio</div></div>
         </div>
       </div>
     </div>
@@ -413,16 +340,25 @@
   <section class="block" id="value">
     <div class="wrap">
       <div class="vp">
-        <span class="sec-kick">03 value proposition</span>
+        <span class="sec-kick">02 value proposition</span>
         <p class="vp-statement">I ship working AI under real constraints, and I am honest about the limits rather than overpromising past them.</p>
         <p class="vp-sub">A software engineer's discipline applied to machine learning. I pair production experience across the full stack with sound judgment about which method a problem actually needs, so the result is a tool a team can trust and not a demo that breaks in the real world.</p>
+        <div class="panel vp-proof" id="metricPanel">
+          <p class="panel-k">// proof, current role</p>
+          <p class="metric-label">I turned one requirement specification into a generated full stack, the database, API, interface, and Playwright end to end tests, a workflow that comes full circle from the user interface through the API to the database.</p>
+          <div class="bars">
+            <div class="bar-row bar-before"><span class="bar-tag">before</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-val">~3 days</span></div>
+            <div class="bar-row bar-after"><span class="bar-tag">after</span><div class="bar-track"><div class="bar-fill"></div></div><span class="bar-val">&lt;1 day</span></div>
+          </div>
+          <p class="panel-note">Form delivery time per form, before and after. A project once estimated at more than <b>two years</b> was compressed into the automated pipeline.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="block" id="skills">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-kick">04</span><h2 class="sec-title">Skills and tools</h2></div>
+      <div class="sec-head"><span class="sec-kick">03</span><h2 class="sec-title">Skills and tools</h2></div>
       <div class="skills">
         <div class="skill"><h3><i></i>Languages</h3><div class="chips"><span class="chip">C#</span><span class="chip">VB.NET</span><span class="chip">JavaScript</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Rust</span></div></div>
         <div class="skill"><h3><i></i>Web and frameworks</h3><div class="chips"><span class="chip">ASP.NET</span><span class="chip">.NET Core</span><span class="chip">Web API</span><span class="chip">Angular</span><span class="chip">React</span><span class="chip">Node.js</span></div></div>
@@ -436,7 +372,7 @@
 
   <section class="block" id="artifacts">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-kick">05</span><h2 class="sec-title">Artifacts</h2></div>
+      <div class="sec-head"><span class="sec-kick">04</span><h2 class="sec-title">Artifacts</h2></div>
       <p class="sec-sub">Two pieces of graduate coursework, chosen to show two different sides of applied AI. One is a tool I designed and built. The other is an analysis that decides which method a problem actually needs.</p>
       <div class="art-list" id="artList"></div>
     </div>
@@ -448,9 +384,8 @@
         <h2>Let us build something</h2>
         <p>Open to conversations about software engineering, applied AI, and the automation of tedious work.</p>
         <div class="contact-row">
-          <a class="btn btn-primary" href="mailto:znarola@gmail.com">Email me</a>
-          <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-primary" href="mailto:znarola4340@gmail.com">Email me</a>
+          <a class="btn btn-ghost" href="https://github.com/s1mpleisg0d" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </div>
@@ -482,14 +417,6 @@
   <footer><div class="wrap fin"><span>Zeelkumar Narola</span><span class="mono">AIML-500 professional portfolio</span></div></footer>
 </div>
 
-<!-- node detail popover -->
-<div class="pop-overlay" id="popOverlay">
-  <div class="pop" id="pop">
-    <button class="pop-close" id="popClose" aria-label="Close">&times;</button>
-    <div id="popBody"></div>
-  </div>
-</div>
-
 <script>
 /* ============ theme: morning / night ============ */
 (function(){
@@ -515,7 +442,7 @@ document.getElementById('themeBtn').addEventListener('click',()=>{
   addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY; if(Math.random()<.1)fireNear(mouse.x,mouse.y);});
   addEventListener('mouseleave',()=>{mouse.x=-1000;mouse.y=-1000;});
   function neighbor(i){let best=-1,bd=LINK;for(let j=0;j<neurons.length;j++){if(j===i)continue;const d=Math.hypot(neurons[i].x-neurons[j].x,neurons[i].y-neurons[j].y);if(d<bd){bd=d;best=j;}}return best;}
-  function fire(i){if(i<0||i>=neurons.length||signals.length>34)return;const j=neighbor(i);if(j<0)return;signals.push({i,j,t:0,s:.012+Math.random()*.016});neurons[i].pulse=1;}
+  function fire(i){if(i<0||i>=neurons.length||signals.length>=3)return;const j=neighbor(i);if(j<0)return;signals.push({i,j,t:0,s:.012+Math.random()*.016});neurons[i].pulse=1;}
   function fireNear(x,y){let best=-1,bd=140;for(let k=0;k<neurons.length;k++){const d=Math.hypot(neurons[k].x-x,neurons[k].y-y);if(d<bd){bd=d;best=k;}}fire(best);}
   // palette recomputed each frame so it updates live on theme toggle
   function pal(){return document.body.classList.contains('night')
@@ -539,7 +466,7 @@ document.getElementById('themeBtn').addEventListener('click',()=>{
     for(const p of neurons){const g=p.pulse>0?p.pulse:0;
       if(g>0){ctx.beginPath();ctx.arc(p.x,p.y,p.r+g*6,0,7);ctx.fillStyle=`rgba(${P.s},${g*.2})`;ctx.fill();}
       ctx.beginPath();ctx.arc(p.x,p.y,p.r+g*2,0,7);ctx.fillStyle=`rgba(${P.n},${P.na+g*.3})`;ctx.fill();}
-    if(Math.random()<.03)fire(Math.floor(Math.random()*neurons.length));
+    if(Math.random()<.02)fire(Math.floor(Math.random()*neurons.length));
     for(let k=signals.length-1;k>=0;k--){const s=signals[k],a=neurons[s.i],b=neurons[s.j];
       if(!a||!b){signals.splice(k,1);continue;}
       const x=a.x+(b.x-a.x)*s.t,y=a.y+(b.y-a.y)*s.t,fade=Math.sin(s.t*Math.PI);
@@ -574,7 +501,7 @@ const ARTIFACTS=[
      {id:"process",label:"Process",list:["Empathized with the frustrated returning user who has to start over every session.","Defined the problem and tested its feasibility honestly rather than assuming it was solvable.","Generated three possible approaches to carrying memory between sessions.","Prototyped the most feasible approach as a working assistant.","Planned a separate test for every memory rule instead of one general trial.","Adapted the design to a user managed memory card once I confirmed no free no code tool offers memory that survives a closed chat."]},
      {id:"tools",label:"Tools and technologies",chips:["Mizou no code assistant platform","Design thinking framework","Generative AI for drafting and testing"]},
      {id:"value",label:"Value proposition",sub:[{h:"Unique value",p:"The hardest part was that no free no code tool offers reliable memory that survives a closed chat. Rather than abandon the idea, I turned that limit into a feature the person controls. The assistant maintains a compact memory card, hands it back to the user to save, and reloads it next session. It refuses to store sensitive data, asks before saving a fact, and stays transparent about how its memory actually works."},{h:"Relevance",p:"This mirrors a recognized memory pattern used in professional agent systems, where a compact profile is loaded into context each session. It shows I can take a vague and difficult goal, confront what the tools genuinely cannot do, and still ship a working solution that respects privacy."}]},
-     {id:"evidence",label:"Evidence",links:[{label:"Open the published assistant",href:"https://mizou.com/preview-bot?ID=164705",note:"Mizou live preview"},{label:"AI Lab documentation",href:"assets/ai-lab-documentation.pdf",note:"add your file to the assets folder"}]}
+     {id:"evidence",label:"Evidence",embed:{id:"1hhNWya2omzuDTBmcsV7D8NOzCMLCM-we",title:"AI Lab documentation"},links:[{label:"Open the published assistant",href:"https://mizou.com/preview-bot?ID=164705",note:"Mizou live preview"}]}
    ]},
   {id:"ml-vs-dl",order:"artifact 02",title:"Machine Learning versus Deep Learning",
    tagline:"A written case study analysis that decides which method a problem actually needs before any model is built.",
@@ -586,7 +513,7 @@ const ARTIFACTS=[
      {id:"process",label:"Process",list:["Selected house price prediction as the simple machine learning case, modeled with linear regression and anchored to Zillow's Zestimate.","Selected image recognition as the deep learning case, modeled with a convolutional neural network and anchored to diabetic retinopathy screening.","Argued why deep learning is unnecessary for structured housing data that a buyer or lender needs explained.","Argued why simple models cannot learn the pixel patterns that medical image recognition depends on.","Verified every real world example and citation against primary and vendor sources before finalizing."]},
      {id:"tools",label:"Tools and technologies",chips:["Linear regression","Convolutional neural networks","APA 7 research and writing","Course resources including AIMultiple and aiml.com","Generative AI for background research and light editing"]},
      {id:"value",label:"Value proposition",sub:[{h:"Unique value",p:"The analysis demonstrates method selection, which is the central judgment behind both machine learning and deep learning. It does not just define the two families. It applies their criteria to real problems and explains exactly where each one breaks down."},{h:"Relevance",p:"Choosing the approach that matches the problem is what separates useful machine learning from forcing a trendy technique onto a task that does not need it. That judgment is what a team relies on before it spends money training a model."}]},
-     {id:"evidence",label:"Evidence",links:[{label:"Read the full report",href:"assets/ml-vs-dl.pdf",note:"add your PDF to the assets folder"}]},
+     {id:"evidence",label:"Evidence",embed:{id:"1BCrpIldpR_YUYYRpX7hY3wNxZFEODz29",title:"Machine Learning versus Deep Learning report"}},
      {id:"refs",label:"References",refs:["AIML. (2024). AIML [Homepage]. https://aiml.com/","Dilmegani, C. (2024, January 12). Top 41 deep learning use cases with examples. AIMultiple Research.","Fireship. (2021, September 9). Machine learning explained in 100 seconds [Video]. YouTube.","Pratt, H., Coenen, F., Broadbent, D. M., Harding, S. P., and Zheng, Y. (2016). Convolutional neural networks for diabetic retinopathy. Procedia Computer Science, 90, 200 to 205.","Zillow. (n.d.). What is a Zestimate? https://www.zillow.com/zestimate/"]}
    ]}
 ];
@@ -604,8 +531,8 @@ function fieldHTML(f){let inner='';
   else if(f.list)inner=`<ul>${f.list.map(li=>`<li>${esc(li)}</li>`).join('')}</ul>`;
   else if(f.chips)inner=`<div class="chips">${f.chips.map(c=>`<span class="chip">${esc(c)}</span>`).join('')}</div>`;
   else if(f.sub)inner=f.sub.map(s=>`<div class="subfield"><h3>${esc(s.h)}</h3><p>${esc(s.p)}</p></div>`).join('');
-  else if(f.links)inner=`<div class="evidence-links">${f.links.map(l=>`<a class="ev" href="${esc(l.href)}" ${l.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${esc(l.label)}${l.note?` <small>${esc(l.note)}</small>`:''}</a>`).join('')}</div>`;
   else if(f.refs)inner=`<ul class="refs">${f.refs.map(r=>`<li>${esc(r)}</li>`).join('')}</ul>`;
+  if(f.links||f.embed){const links=(f.links||[]).slice();if(f.embed)links.push({label:"Open in Google Drive",href:"https://drive.google.com/file/d/"+f.embed.id+"/view",note:"new tab"});inner+=`<div class="evidence-links">${links.map(l=>`<a class="ev" href="${esc(l.href)}" ${l.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${esc(l.label)}${l.note?` <small>${esc(l.note)}</small>`:''}</a>`).join('')}</div>`;}
   return `<div class="field" id="f-${f.id}"><h2>${esc(f.label)}</h2>${inner}</div>`;}
 function openDetail(id){const a=ARTIFACTS.find(x=>x.id===id);if(!a)return;
   document.getElementById('detailHead').innerHTML=`<h1>${esc(a.title)}</h1><p class="tagline">${esc(a.tagline)}</p><div class="detail-tags">${a.tags.map(t=>`<span class="chip">${esc(t)}</span>`).join('')}</div>`;
@@ -633,113 +560,8 @@ const burger=document.getElementById('burger'),navLinks=document.getElementById(
 burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll('.hero .reveal').forEach(el=>el.classList.add('in'))));
-const hp=document.getElementById('heroPanel');
+const hp=document.getElementById('metricPanel');
 new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){setTimeout(()=>hp.classList.add('animate'),250);o.unobserve(e.target);}}),{threshold:.4}).observe(hp);
-
-/* ============ JOURNEY FLOW ============ */
-(function(){
-  const ICON={
-    cap:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg>',
-    code:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>',
-    grad:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/></svg>',
-    gear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2 2M17 17l2 2M19.1 4.9l-2 2M7 17l-2 2"/></svg>',
-    brain:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-1 5.8V17a3 3 0 0 0 4 2.8M15 4a3 3 0 0 1 3 3 3 3 0 0 1 1 5.8V17a3 3 0 0 1-4 2.8M9 4v16M15 4v16"/></svg>',
-    doc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>'
-  };
-  const NODES=[
-    {id:"edu",x:120,y:140,icon:"cap",yr:"2017 – 2021",title:"Education",desc:"Bachelor of Technology in Information Technology at Uka Tarsadia University, where the fundamentals of software and systems started."},
-    {id:"dev",x:400,y:320,icon:"code",yr:"2021 – 2023",title:"Software developer",desc:"Web and enterprise development at Cygnus Softech and Clearsky IT. Reservation systems, single page apps, and scalable Web APIs in C#, .NET, and Angular."},
-    {id:"ms",x:680,y:140,icon:"grad",yr:"2023",title:"MS Computer Science",desc:"Master of Science in Computer Science at Wright State University. Advanced databases, algorithm design, and data mining."},
-    {id:"ohio",x:940,y:330,icon:"gear",yr:"present",title:"State of Ohio, automation",desc:"Software Application Developer. Built AI assisted generation of database, API, and interface layers, plus Playwright automation that cut form delivery from about three days to under one."},
-    {id:"aiml",x:1150,y:150,icon:"brain",yr:"2026",title:"AIML-500, applied ML",desc:"Machine learning fundamentals at Indiana Wesleyan University, where software engineering discipline meets model judgment."},
-    {id:"a1",x:1010,y:470,icon:"doc",yr:"artifact 01",title:"Memory Assistant",desc:"",artifact:"memory-assistant"},
-    {id:"a2",x:1240,y:450,icon:"doc",yr:"artifact 02",title:"ML vs Deep Learning",desc:"",artifact:"ml-vs-dl"}
-  ];
-  const SPINE=[["edu","dev"],["dev","ms"],["ms","ohio"],["ohio","aiml"]];
-  const BRANCH=[["aiml","a1"],["aiml","a2"]];
-  const byId={};NODES.forEach(n=>byId[n.id]=n);
-
-  const flow=document.getElementById('flow'),stage=document.getElementById('stage'),svg=document.getElementById('edges');
-  const NS='http://www.w3.org/2000/svg';
-  // build edges
-  const edgeEls=[];
-  function mkEdge(a,b,cls){const p=document.createElementNS(NS,'path');p.setAttribute('class','edge '+cls);svg.appendChild(p);edgeEls.push({a,b,el:p});return p;}
-  // base (static) under flowing
-  SPINE.forEach(([a,b])=>mkEdge(a,b,'edge-base'));
-  const flowPaths=SPINE.map(([a,b])=>mkEdge(a,b,'flow-dash spine'));
-  BRANCH.forEach(([a,b])=>mkEdge(a,b,'branch flow-dash'));
-  // comet
-  const comet=document.createElementNS(NS,'circle');comet.setAttribute('r','4.5');comet.setAttribute('class','comet');svg.appendChild(comet);
-
-  // build nodes
-  NODES.forEach(n=>{
-    const el=document.createElement('div');el.className='node'+(n.artifact?' artifact':'');el.dataset.id=n.id;
-    el.style.left=n.x+'px';el.style.top=n.y+'px';
-    el.innerHTML=`<div class="n-top"><div class="n-ic">${ICON[n.icon]}</div><div><div class="n-yr">${esc(n.yr)}</div></div></div>
-      <h4>${esc(n.title)}</h4>${n.desc?`<p>${esc(n.desc.length>70?n.desc.slice(0,68)+'…':n.desc)}</p>`:''}${n.artifact?'<div class="n-open">open full page &#8599;</div>':''}`;
-    stage.appendChild(el);n.el=el;
-  });
-
-  function curve(a,b){const dx=(b.x-a.x)*0.5;return `M ${a.x} ${a.y} C ${a.x+dx} ${a.y}, ${b.x-dx} ${b.y}, ${b.x} ${b.y}`;}
-  function drawEdges(){edgeEls.forEach(e=>e.el.setAttribute('d',curve(byId[e.a],byId[e.b])));}
-  drawEdges();
-
-  // comet travels the spine
-  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  let seg=0,t=0;
-  function animateComet(){
-    const path=flowPaths[seg];const len=path.getTotalLength();
-    const pt=path.getPointAtLength(t*len);comet.setAttribute('cx',pt.x);comet.setAttribute('cy',pt.y);
-    t+=0.012; if(t>=1){t=0;seg=(seg+1)%flowPaths.length;}
-    requestAnimationFrame(animateComet);
-  }
-  animateComet();
-
-  // view transform (pan + zoom)
-  let scale=1,ox=0,oy=0, initScale=1,initOx=0,initOy=0;
-  function apply(){stage.style.transform=`translate(${ox}px,${oy}px) scale(${scale})`;}
-  function fitView(){
-    const cw=flow.clientWidth, ch=flow.clientHeight;
-    initScale=Math.min(1,(cw-24)/1340, (ch-24)/600);
-    if(cw<760) initScale=Math.max(initScale,(cw-16)/720); // keep readable on mobile, allow pan
-    scale=initScale; ox=initOx=(cw-1340*scale)/2>0?(cw-1340*scale)/2:8; oy=initOy=(ch-600*scale)/2>0?(ch-600*scale)/2:8; apply();
-  }
-  fitView(); addEventListener('resize',fitView);
-  document.getElementById('zoomIn').addEventListener('click',()=>{scale=Math.min(1.8,scale*1.2);apply();});
-  document.getElementById('zoomOut').addEventListener('click',()=>{scale=Math.max(.4,scale/1.2);apply();});
-  document.getElementById('zoomReset').addEventListener('click',fitView);
-
-  // pointer interaction: drag node, pan canvas, click to open
-  let mode=null,node=null,start={x:0,y:0},moved=0,panStart={x:0,y:0};
-  stage.addEventListener('pointerdown',e=>{
-    const nEl=e.target.closest('.node');moved=0;start={x:e.clientX,y:e.clientY};
-    if(nEl){mode='node';node=byId[nEl.dataset.id];nEl.classList.add('dragging');nEl.setPointerCapture(e.pointerId);}
-    else{mode='pan';panStart={x:ox,y:oy};stage.classList.add('grabbing');stage.setPointerCapture(e.pointerId);}
-  });
-  stage.addEventListener('pointermove',e=>{
-    if(!mode)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));
-    if(mode==='node'&&node){node.x+=dx/scale;node.y+=dy/scale;node.el.style.left=node.x+'px';node.el.style.top=node.y+'px';start={x:e.clientX,y:e.clientY};drawEdges();}
-    else if(mode==='pan'){ox=panStart.x+dx;oy=panStart.y+dy;apply();}
-  });
-  function endPointer(e){
-    if(mode==='node'&&node){node.el.classList.remove('dragging');
-      if(moved<6){ if(node.artifact){location.hash='artifact/'+node.artifact;} else openPop(node); }}
-    stage.classList.remove('grabbing');mode=null;node=null;
-  }
-  stage.addEventListener('pointerup',endPointer);
-  stage.addEventListener('pointercancel',endPointer);
-
-  // keyboard open on focused node
-  NODES.forEach(n=>{n.el.tabIndex=0;n.el.addEventListener('keydown',e=>{if(e.key==='Enter'){if(n.artifact)location.hash='artifact/'+n.artifact;else openPop(n);}});});
-
-  // popover
-  const overlay=document.getElementById('popOverlay'),popBody=document.getElementById('popBody');
-  function openPop(n){popBody.innerHTML=`<div class="pop-ic">${ICON[n.icon]}</div><p class="pop-yr">${esc(n.yr)}</p><h3>${esc(n.title)}</h3><p>${esc(n.desc)}</p>`;overlay.classList.add('open');}
-  function closePop(){overlay.classList.remove('open');}
-  document.getElementById('popClose').addEventListener('click',closePop);
-  overlay.addEventListener('click',e=>{if(e.target===overlay)closePop();});
-  addEventListener('keydown',e=>{if(e.key==='Escape')closePop();});
-})();
 
 /* ============ custom cursor (Supratik pattern) ============ */
 (function(){
