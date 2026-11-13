@@ -177,7 +177,7 @@
   .chip{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);background:var(--bg);
     border:1px solid var(--line);border-radius:7px;padding:5px 10px}
 
-  .art-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .art-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .art{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;
     cursor:pointer;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column;min-height:250px}
   .art:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:0 20px 44px rgba(8,10,16,.14)}
@@ -373,7 +373,7 @@
   <section class="block" id="artifacts">
     <div class="wrap">
       <div class="sec-head"><span class="sec-kick">04</span><h2 class="sec-title">Artifacts</h2></div>
-      <p class="sec-sub">Three pieces of graduate coursework, chosen to show three different sides of applied AI. One is a tool I designed and built. One is an analysis that decides which method a problem needs. One is a communication piece that makes a model clear to the people who adopt it.</p>
+      <p class="sec-sub">Four pieces of graduate coursework, chosen to show four different sides of applied AI. One is a tool I designed and built. One is an analysis that decides which method a problem needs. One is a communication piece that makes a model clear to the people who adopt it. One is a reasoning exercise that judges the data risks before a model ships.</p>
       <div class="art-list" id="artList"></div>
     </div>
   </section>
@@ -528,6 +528,18 @@ const ARTIFACTS=[
      {id:"value",label:"Value proposition",sub:[{h:"Unique value",p:"I can take a hard technical idea and make it clear and honest for a non-technical audience without flattening it into something false. I chose exactly where the simplification stops, which is the hardest part of technical communication."},{h:"Relevance",p:"Most AI efforts stall on adoption, not on the model. A person who can explain a system in terms a team trusts, and who knows which claims to avoid, is the one who turns a working model into a tool people actually use."}]},
      {id:"evidence",label:"Evidence",embed:{id:"1_MThU0pTiJnxCQWsb1ZZGYD1DHAP-9nK",title:"Neural Networks Made Simple"}},
      {id:"refs",label:"References",refs:["Jones, M. T. (2021, May 20). A beginner's guide to artificial intelligence and machine learning. IBM Developer. https://developer.ibm.com/articles/cc-beginner-guide-machine-learning-ai-cognitive/","Naskar, V. (n.d.). Everything AI and ML, curated learning resources. https://viveknaskar.github.io/everything-ai-ml/"]}
+   ]},
+  {id:"data-challenges",order:"artifact 04",title:"Data Challenge Scenarios",
+   tagline:"A coached exercise where I reasoned through real data risks across the machine learning lifecycle, from cleaning and bias to privacy and governance.",
+   tags:["Data judgment","Bias and fairness","Privacy and governance"],
+   card:"Where the other three build, analyze, and explain a model, this one judges the data itself and the risks that sit before and around it.",
+   fields:[
+     {id:"intro",label:"Introduction",body:["This artifact is a guided interaction with an AI training coach from Workshop Four. I worked three realistic machine learning data challenges and defended every decision with my own reasoning. It shows a skill my first three artifacts do not, judging the data itself and the risks that sit before a model rather than building, analyzing, or explaining one."]},
+     {id:"objective",label:"Objective",body:["To reason through the data problems that decide whether a model can be trusted, and to justify each call rather than name a technique. The exercise moved across the full lifecycle, data quality and cleaning, bias and distribution shift, and privacy, security, and governance, and it pushed me to defend my reasoning under probing questions."]},
+     {id:"process",label:"Process",list:["Sequenced a cleaning workflow for eight hundred thousand noisy reviews, cheap exact deduplication first, near duplicate detection next, and language detection before any language specific rule.","Revised from deleting noise to quarantining excluded rows with their metadata intact, so a cleaning step cannot quietly change who the data represents without an audit trail.","Diagnosed a resume model trained on one company's history and argued that borrowed hiring labels only measure past preference, so validating against them reinforces the original bias.","Proposed federated learning with differential privacy for hospital data and separated patient privacy from model integrity threats like a poisoned update.","Named the test behind each claim, leave one site out cross validation for site specific shortcuts and a proxy variable audit for hidden bias."]},
+     {id:"tools",label:"Tools and technologies",chips:["Data Challenge Scenarios coach","Deduplication and MinHash","Leave one site out cross validation","Differential privacy and federated learning","Generative AI dialogue"]},
+     {id:"value",label:"Value proposition",sub:[{h:"Unique value",p:"I reason about what data represents and what a model is really validated against, not just which technique to name. The strongest thread was construct validity, asking what a label actually measures before trusting it, which is where most quiet bias enters."},{h:"Relevance",p:"Most model failures are data failures. A person who can tell a cleaning step that improves a dataset from one that silently changes who it represents, and who separates privacy from integrity, is the one who keeps a model trustworthy before it ever ships."}]},
+     {id:"evidence",label:"Evidence",embed:{id:"1CY2nOzeaYkcZH3MkugIyDM1kB6R8yaOt",title:"Data Challenge Scenarios completion summary"}}
    ]}
 ];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
